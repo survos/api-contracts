@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Survos\Api\Contracts\Dto;
@@ -26,7 +27,7 @@ final class ApiError implements \JsonSerializable
             'code' => $this->code->value,
             'message' => $this->message,
         ];
-        if ($this->detail !== null) {
+        if (null !== $this->detail) {
             $error['detail'] = $this->detail;
         }
 
